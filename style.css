@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    direction: rtl;
+    text-align: center;
+    min-height: 100vh;
+    color: #fff;
+    background: linear-gradient(135deg, #6b1838, #c05b78, #f2b6bd);
+    overflow-x: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.invitation {
+    position: relative;
+    max-width: 650px;
+    width: 100%;
+    padding: 45px 25px;
+    border: 4px double #f8d98b;
+    border-radius: 25px;
+    background: rgba(90, 20, 48, 0.65);
+    box-shadow: 0 0 35px rgba(255, 220, 150, 0.4);
+    animation: appear 2s ease;
+}
+
+h1 {
+    color: #ffe5a3;
+    font-size: 35px;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #ffe7b0;
+    font-size: 27px;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 19px;
+    line-height: 2.2;
+    margin: 12px 0;
+}
+
+.names {
+    font-size: 28px;
+    color: #ffe7b0;
+}
+
+.details {
+    border-top: 1px solid #f8d98b;
+    border-bottom: 1px solid #f8d98b;
+    padding: 20px 5px;
+    margin: 25px 0;
+}
+
+button {
+    background: #f6d58b;
+    color: #67223d;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-family: inherit;
+    cursor: pointer;
+    margin: 15px;
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+.petal {
+    position: fixed;
+    top: -30px;
+    z-index: 5;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media(max-width: 480px) {
+    h1 { font-size: 27px; }
+    h2 { font-size: 23px; }
+    p { font-size: 16px; }
+    .invitation { padding: 30px 15px; }
+}
